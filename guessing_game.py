@@ -29,11 +29,9 @@ def get_player_guess():
 def check_guess(correct_number, player_guess):
     if player_guess > correct_number:
         print("It is lower!")
-        return False
 
     if player_guess < correct_number:
         print("It is higher!")
-        return False
 
     return correct_number == player_guess
 
