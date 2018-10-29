@@ -15,6 +15,10 @@ def display_banner():
     return "\n".join(banner_line.lstrip() for banner_line in banner.splitlines())
 
 
+def random_number():
+    return random.randint(1, 10)
+
+
 def get_player_guess():
     try:
         player_guess = int(input("Pick a number between 1 and 10: "))
@@ -56,7 +60,7 @@ def start_game():
     print(display_banner())
     attempts = 0
     high_score = 0
-    correct_number = random.randint(1, 10)
+    correct_number = random_number()
     try:
         while True:
             player_guess = get_player_guess()
@@ -71,6 +75,7 @@ def start_game():
                 break
             print("The HIGHSCORE is {}".format(high_score))
             attempts = 0
+            correct_number = random_number()
     except KeyboardInterrupt:
         end_game(high_score)
 
